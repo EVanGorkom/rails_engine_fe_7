@@ -14,4 +14,8 @@ class MerchantsService
   def merchants_list
     get_url("merchants")
   end
+
+  def merchant_search(data)
+    get_url("merchants/#{data}")
+  end
 end
