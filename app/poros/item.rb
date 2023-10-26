@@ -1,4 +1,4 @@
-class MerchantItem
+class Item
   attr_reader :id,
               :name
 

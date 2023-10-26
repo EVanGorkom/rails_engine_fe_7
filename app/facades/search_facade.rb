@@ -21,7 +21,16 @@ class SearchFacade
     items_data = service.items_by_merchant(data)
 
     items_data['data'].map do |item_data|
-      MerchantItem.new(item_data)
+      Item.new(item_data)
+    end
+  end
+
+  def all_items
+    service = ItemsService.new
+    items_data = service.items_list
+
+    items_data['data'].map do |item_data|
+      Item.new(item_data)
     end
   end
 end
