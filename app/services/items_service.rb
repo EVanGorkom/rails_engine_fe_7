@@ -14,4 +14,8 @@ class ItemsService
   def items_list
     get_url("items")
   end
+  
+  def item_search(data)
+    get_url("items/#{data}")
+  end
 end

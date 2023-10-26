@@ -33,4 +33,11 @@ class SearchFacade
       Item.new(item_data)
     end
   end
+
+  def find_item(data)
+    service = ItemsService.new
+    item_data = service.item_search(data)
+
+    Item.new(item_data['data'])
+  end
 end
