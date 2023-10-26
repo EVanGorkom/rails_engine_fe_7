@@ -9,16 +9,16 @@ class SearchFacade
     end
   end
 
-  def find_merchant(data)
+  def find_merchant(id)
     service = MerchantsService.new
-    json_data = service.merchant_search(data)
+    json_data = service.merchant_search(id)
     merchant_data = json_data['data']
     Merchant.new(merchant_data)
   end
 
-  def items_of_merchant(data)
+  def items_of_merchant(id)
     service = MerchantsService.new
-    items_data = service.items_by_merchant(data)
+    items_data = service.items_by_merchant(id)
 
     items_data['data'].map do |item_data|
       Item.new(item_data)
@@ -34,10 +34,19 @@ class SearchFacade
     end
   end
 
-  def find_item(data)
+  def find_item(id)
     service = ItemsService.new
-    item_data = service.item_search(data)
+    item_data = service.item_search(id)
 
     Item.new(item_data['data'])
   end
+
+  # def find_merchant_by_name(keyword)
+  #   service = MerchantsService.new
+  #   partial_match_list = service.srch_merch_by_name(keyword)
+
+  #   partial_match_list['data'].map do |merchant|
+  #     Merchant.new(merchant)
+  #   end
+  # end
 end

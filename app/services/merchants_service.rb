@@ -15,11 +15,15 @@ class MerchantsService
     get_url("merchants")
   end
 
-  def merchant_search(data)
-    get_url("merchants/#{data}")
+  def merchant_search(id)
+    get_url("merchants/#{id}")
   end
 
-  def items_by_merchant(data)
-    get_url("merchants/#{data}/items")
+  def items_by_merchant(id)
+    get_url("merchants/#{id}/items")
   end
+
+  # def srch_merch_by_name(keyword)
+  #   get_url("merchants/find_all?name=#{keyword}")
+  # end
 end
