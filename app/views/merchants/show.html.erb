@@ -1,6 +1,9 @@
-<h1><%= @merchant.name %>'s Page</h1><br><br>
+<h1><%= @merchant.name %>'s Page</h1><br>
 
 <h3>Items List:</h3>
 <% @items.each do |item| %>
-  <%= item.name %>
+  <p>
+    <%= item.id %>
+    <%= item.name %>
+  </p>
 <% end %>

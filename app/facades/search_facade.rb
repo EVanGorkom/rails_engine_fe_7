@@ -15,4 +15,13 @@ class SearchFacade
     merchant_data = json_data['data']
     Merchant.new(merchant_data)
   end
+
+  def items_of_merchant(data)
+    service = MerchantsService.new
+    items_data = service.items_by_merchant(data)
+
+    items_data['data'].map do |item_data|
+      MerchantItem.new(item_data)
+    end
+  end
 end
