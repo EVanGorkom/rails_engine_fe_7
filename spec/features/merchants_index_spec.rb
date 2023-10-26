@@ -18,6 +18,8 @@ RSpec.describe "Merchant's Index Page" do
     expect(current_path).to eq("/merchants/1")
     expect(page).to have_content("Schroeder-Jerde's Page")
     expect(page).to have_content("Items List:")
-    # expect(page).to have_content("")
+    expect(page).to have_content("4 Item Nemo Facere")
+    expect(page).to have_content("5 Item Expedita Aliquam")
+    expect(page).to have_content("6 Item Provident At")
   end
 end
