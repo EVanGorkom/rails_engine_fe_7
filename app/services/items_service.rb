@@ -15,7 +15,7 @@ class ItemsService
     get_url("items")
   end
   
-  def item_search(data)
-    get_url("items/#{data}")
+  def item_search(id)
+    get_url("items/#{id}")
   end
 end
